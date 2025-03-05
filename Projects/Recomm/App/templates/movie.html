@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{ movie.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>{{ movie.title }}</h1>
+    </header>
+    <div class="movie-details">
+        <img src="https://placehold.co/100x150?text={{ movie.title }}" alt="{{ movie.title }}">
+        <div>
+            <p><strong>Rating:</strong> {{ movie.rating }}</p>
+            <h2>Recommended Movies:</h2>
+            <div class="recommendations">
+                {% for rec in recommendations %}
+                <div class="recommendation-card" onclick="location.href='/movie/{{ rec.id }}'">
+                    <img src="https://placehold.co/100x150?text={{ rec.title }}" alt="{{ rec.title }}">
+                    <p>{{ rec.title }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
