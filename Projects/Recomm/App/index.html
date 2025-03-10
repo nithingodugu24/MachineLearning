@@ -1,0 +1,347 @@
+<html lang="en">
+
+<head>
+    <title>Movie Recommender</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="title">ButtFlix</h1>
+        <div class="items">
+            <div class="item home active">Home</div>
+            <div class="item movies">Movies</div>
+            <div class="item series">TV Shows</div>
+
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="slideshow">
+            <div class="slide" id="slide1">
+                <div class="details">
+
+                    <span class="title">Stranger Things</span>
+
+                    <div class="extra">
+                        <span class="year">2016</span>
+                        <span class="sep"> | </span>
+                        <span class="certificate">U/A 16+</span>
+                        <span class="sep"> | </span>
+                        <span class="type">Series: 4 Seasons</span>
+                        <span class="sep"> | </span>
+                        <span class="genre">Sci-Fi</span>
+                    </div>
+
+                    <button class="watch">Watch Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <h2>Top Rated</h2>
+    <div class="movie-container">
+
+        <div class="movie-card" onclick="location.href='/movie/tt28526239'">
+            <!-- <img src="https://placehold.co/100x150?text=Spark: L.I.F.E." alt="Spark: L.I.F.E."> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BYjBhOGMwM2MtZDU5Yy00MDM5LWI0MGQtYTY4OGIwOWJiODY5XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Spark: L.I.F.E.">
+            <p>Spark: L.I.F.E.</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt16026746'">
+            <!-- <img src="https://placehold.co/100x150?text=X-Men &#39;97" alt="X-Men &#39;97"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BZDE0Zjk5OGYtZTk3OC00ZDZhLWE2NGQtNzc3NmJhNjljYzY5XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="X-Men '97">
+            <p>X-Men '97</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt10369484'">
+            <!-- <img src="https://placehold.co/100x150?text=The Power" alt="The Power"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMTkyY2NjMDItYzk0Yi00N2IxLTllYTQtOTFhOTdjZTI3ZDBjXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="The Power">
+            <p>The Power</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt23475174'">
+            <!-- <img src="https://placehold.co/100x150?text=Sarfira" alt="Sarfira"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BZTI2OWU2NDAtODhjNS00NTlmLThjNDgtOWI2ODc3YTRlOTUxXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Sarfira">
+            <p>Sarfira</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt11958610'">
+            <!-- <img src="https://placehold.co/100x150?text=Trigger Point" alt="Trigger Point"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BZDU3Njk1YzYtNDMyYy00MGQwLWFmNTMtMjlhNjAyY2MzNTdiXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Trigger Point">
+            <p>Trigger Point</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt11703050'">
+            <!-- <img src="https://placehold.co/100x150?text=The House" alt="The House"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BYWU3Nzc3MGYtMGYyZi00ZmJkLWFhODQtZTk0OTkyM2ViY2ExXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="The House">
+            <p>The House</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt31556612'">
+            <!-- <img src="https://placehold.co/100x150?text=We Will Dance Again" alt="We Will Dance Again"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BNDliMGNiNTktZDJlNC00NDVhLThiOWEtZWUzMGYyZDljZWVlXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="We Will Dance Again">
+            <p>We Will Dance Again</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt22817632'">
+            <!-- <img src="https://placehold.co/100x150?text=Heavenly Delusion" alt="Heavenly Delusion"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMmU1MmQ4NWEtNjhmZC00NDRmLTkwMzctNGE3YTU1YzFmMGI4XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Heavenly Delusion">
+            <p>Heavenly Delusion</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt26259966'">
+            <!-- <img src="https://placehold.co/100x150?text=Modern Masters" alt="Modern Masters"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BZWU2YjNhNjQtODcwMi00NmVmLWI4ZWMtY2VhNDAzNGVmZDc3XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Modern Masters">
+            <p>Modern Masters</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt21823606'">
+            <!-- <img src="https://placehold.co/100x150?text=A Real Pain" alt="A Real Pain"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BODY2YWYwM2YtZTVlNC00MjgyLTgzYTgtNmFmYWE5ZmY1MDM5XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="A Real Pain">
+            <p>A Real Pain</p>
+        </div>
+
+    </div>
+
+    <h2>Indian</h2>
+    <div class="movie-container">
+
+        <div class="movie-card" onclick="location.href='/movie/tt11143108'">
+            <!-- <img src="https://placehold.co/100x150?text=Oh My Kadavule" alt="Oh My Kadavule"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMWM5MWY2YjctNzQ2Yy00NGYzLThmNTUtOWM0ZTM4ODMxYjM2XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Oh My Kadavule">
+            <p>Oh My Kadavule</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt2356180'">
+            <!-- <img src="https://placehold.co/100x150?text=Bhaag Milkha Bhaag" alt="Bhaag Milkha Bhaag"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMThjNTVhYTAtMTcyNS00ZTlhLWFhOWUtZWE3YTExYjc3OTYzXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Bhaag Milkha Bhaag">
+            <p>Bhaag Milkha Bhaag</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt7715202'">
+            <!-- <img src="https://placehold.co/100x150?text=Sarkar" alt="Sarkar"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMDk3MjY2ZDctYmUzMy00MDM4LWJiYTQtNTJiYTdiNWIxYjJhXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Sarkar">
+            <p>Sarkar</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt26660021'">
+            <!-- <img src="https://placehold.co/100x150?text=Aavesham" alt="Aavesham"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BNzM3OTcyNDQtNjAwNi00YTg4LWIyNTEtNjMzY2E2MWY2MGU1XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Aavesham">
+            <p>Aavesham</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt21279678'">
+            <!-- <img src="https://placehold.co/100x150?text=NCR Days" alt="NCR Days"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BNTZlYTY0OTgtODBmNy00NjJkLTgwNzctYzUxNTUwNDZjNzYyXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="NCR Days">
+            <p>NCR Days</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt1562872'">
+            <!-- <img src="https://placehold.co/100x150?text=Zindagi Na Milegi Dobara" alt="Zindagi Na Milegi Dobara"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BOGIzYzg5NzItNDRkYS00NmIzLTk3NzQtZWYwY2VlZDhiYWQ4XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Zindagi Na Milegi Dobara">
+            <p>Zindagi Na Milegi Dobara</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt2218988'">
+            <!-- <img src="https://placehold.co/100x150?text=Ustad Hotel" alt="Ustad Hotel"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BNTU2MzI3ZTMtNjRjOC00ZDBmLTkxYzctZjZjOTk2YTQxNTJlXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Ustad Hotel">
+            <p>Ustad Hotel</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt2882328'">
+            <!-- <img src="https://placehold.co/100x150?text=Ugly" alt="Ugly"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BNGExZjhjMWYtYmRmNC00ZmRkLWJmYTYtMjY0YzUzNDcyNzhkXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Ugly">
+            <p>Ugly</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt3405236'">
+            <!-- <img src="https://placehold.co/100x150?text=Raees" alt="Raees"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMTc2NTYwMTE1NV5BMl5BanBnXkFtZTgwODQ5MzAwMTI@._V0_UY248_.jpg"
+                alt="Raees">
+            <p>Raees</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt0214915'">
+            <!-- <img src="https://placehold.co/100x150?text=Manichithrathazhu" alt="Manichithrathazhu"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BNjllNGZiYjAtMjVjMy00ZGI4LThiZDAtYzFlOGRkY2E0NDA3XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Manichithrathazhu">
+            <p>Manichithrathazhu</p>
+        </div>
+
+    </div>
+
+    <h2>Action Movies</h2>
+    <div class="movie-container">
+
+        <div class="movie-card" onclick="location.href='/movie/tt7190460'">
+            <!-- <img src="https://placehold.co/100x150?text=Thupparivaalan" alt="Thupparivaalan"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BODY5ZDVjYzEtN2I5Yy00ZDk2LTliYzctMjQyYjIwNjQ4YzBhXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Thupparivaalan">
+            <p>Thupparivaalan</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt17279496'">
+            <!-- <img src="https://placehold.co/100x150?text=Civil War" alt="Civil War"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BYTkzMjc0YzgtY2E0Yi00NDBlLWI0MWUtODY1ZjExMDAyOWZiXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Civil War">
+            <p>Civil War</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt0892769'">
+            <!-- <img src="https://placehold.co/100x150?text=How to Train Your Dragon" alt="How to Train Your Dragon"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMjA5NDQyMjc2NF5BMl5BanBnXkFtZTcwMjg5ODcyMw@@._V0_UY248_.jpg"
+                alt="How to Train Your Dragon">
+            <p>How to Train Your Dragon</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt0093015'">
+            <!-- <img src="https://placehold.co/100x150?text=Dragons Forever" alt="Dragons Forever"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BN2IwNTk1NDItN2ZjNi00YWQ4LTg2NDMtODlkZmNkNWExNGFmXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Dragons Forever">
+            <p>Dragons Forever</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt0076752'">
+            <!-- <img src="https://placehold.co/100x150?text=The Spy Who Loved Me" alt="The Spy Who Loved Me"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BOGQzNTIyYjAtNjAyNy00OTZhLTg4YmMtNzAyNjdiOTlhZDVlXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="The Spy Who Loved Me">
+            <p>The Spy Who Loved Me</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt0145660'">
+            <!-- <img src="https://placehold.co/100x150?text=Austin Powers: The Spy Who Shagged Me" alt="Austin Powers: The Spy Who Shagged Me"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BY2I3ZTBjOGQtYjQ3My00M2RlLTk3MjgtOTVmMWExNmU3ZjBkXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Austin Powers: The Spy Who Shagged Me">
+            <p>Austin Powers: The Spy Who Shagged Me</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt2969656'">
+            <!-- <img src="https://placehold.co/100x150?text=Cold Eyes" alt="Cold Eyes"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BODI0ODA1MWUtZDFiNC00ZThlLWE1NGItMGM1YTIyZjc3NzVjXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Cold Eyes">
+            <p>Cold Eyes</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt1456060'">
+            <!-- <img src="https://placehold.co/100x150?text=Boy Wonder" alt="Boy Wonder"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMTM0MzkzMTc5N15BMl5BanBnXkFtZTcwNDE4NjI3Mw@@._V0_UY248_.jpg"
+                alt="Boy Wonder">
+            <p>Boy Wonder</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt1190634'">
+            <!-- <img src="https://placehold.co/100x150?text=The Boys" alt="The Boys"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMWJlN2U5MzItNjU4My00NTM2LWFjOWUtOWFiNjg3ZTMxZDY1XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="The Boys">
+            <p>The Boys</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt1677720'">
+            <!-- <img src="https://placehold.co/100x150?text=Ready Player One" alt="Ready Player One"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BNzVkMTgzODQtMWIwZC00NzE4LTgzZjYtMzAwM2I5OGZhNjE4XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Ready Player One">
+            <p>Ready Player One</p>
+        </div>
+
+    </div>
+
+    <h2>Comedy Movies</h2>
+    <div class="movie-container">
+
+        <div class="movie-card" onclick="location.href='/movie/tt0106966'">
+            <!-- <img src="https://placehold.co/100x150?text=Strawberry &amp; Chocolate" alt="Strawberry &amp; Chocolate"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BNTNmMmRmZDMtYmViZC00YjBhLTgwZWMtODY3M2U2ZDE5NDYzXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Strawberry &amp; Chocolate">
+            <p>Strawberry &amp; Chocolate</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt1267295'">
+            <!-- <img src="https://placehold.co/100x150?text=Cowboy Bebop" alt="Cowboy Bebop"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BNjY4Yjk5MmEtYmNjYy00MjI1LWJlZjktMWRkYmU0YThlZWVjXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Cowboy Bebop">
+            <p>Cowboy Bebop</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt0106056'">
+            <!-- <img src="https://placehold.co/100x150?text=Living Single" alt="Living Single"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMmIxZjgyODQtN2MzYy00YWY0LTlhOWYtMjQ4YjY3YzlhY2Q5XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Living Single">
+            <p>Living Single</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt0043313'">
+            <!-- <img src="https://placehold.co/100x150?text=Early Summer" alt="Early Summer"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMGY0MDM0NzQtMDQ1MS00MjU2LTlkZWItOTUyODg3NzRlNDA0XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Early Summer">
+            <p>Early Summer</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt0050306'">
+            <!-- <img src="https://placehold.co/100x150?text=Designing Woman" alt="Designing Woman"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BNDQwYzk3ZDMtOWRkZS00YmI2LTllOTMtNDIzOWZlYmNhMTFlXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Designing Woman">
+            <p>Designing Woman</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt1196204'">
+            <!-- <img src="https://placehold.co/100x150?text=Cemetery Junction" alt="Cemetery Junction"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMTQ1MjA2NzIwMF5BMl5BanBnXkFtZTcwMzUyMjcyMw@@._V0_UY248_.jpg"
+                alt="Cemetery Junction">
+            <p>Cemetery Junction</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt0096061'">
+            <!-- <img src="https://placehold.co/100x150?text=Scrooged" alt="Scrooged"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BYWY3ODUyZTQtMTQyZS00ZWIyLTk3M2YtYzU5ZWQ3MTEwZGU1XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Scrooged">
+            <p>Scrooged</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt2304655'">
+            <!-- <img src="https://placehold.co/100x150?text=Gabbar Singh" alt="Gabbar Singh"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BNjRmZTU4NjYtMjgzNC00ZWY5LThlMDUtNjc4MWRiZmQzM2VmXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="Gabbar Singh">
+            <p>Gabbar Singh</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt2210425'">
+            <!-- <img src="https://placehold.co/100x150?text=1000 Congratulations" alt="1000 Congratulations"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BMDBlYzBiZTYtZWE1ZC00MjY4LWFkNWItOGRjYTU2NWE1MDY3XkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="1000 Congratulations">
+            <p>1000 Congratulations</p>
+        </div>
+
+        <div class="movie-card" onclick="location.href='/movie/tt0464913'">
+            <!-- <img src="https://placehold.co/100x150?text=OSS 117: Cairo, Nest of Spies" alt="OSS 117: Cairo, Nest of Spies"> -->
+            <img src="https://m.media-amazon.com/images/M/MV5BZmFlZmI3ZTktYTM0MS00NmRjLTgwNDEtZTEzYmYzMmVhNDEyXkEyXkFqcGc@._V0_UY248_.jpg"
+                alt="OSS 117: Cairo, Nest of Spies">
+            <p>OSS 117: Cairo, Nest of Spies</p>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
