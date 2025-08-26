@@ -8,26 +8,127 @@
 
 <body>
     <header>
-        <h1>ButtFlix</h1>
+        <h1 class="title">ButtFlix</h1>
         <div class="items">
-            <div class="movies">Movies</div>
-            <div class="series">TV Shows</div>
+            <div class="item home active">Home</div>
+            <div class="item movies">Movies</div>
+            <div class="item series">TV Shows</div>
 
         </div>
     </header>
 
-    {% for section, movies in sections.items() %}
-    <h2>{{ section }}</h2>
-    <div class="movie-container">
-        {% for movie in movies %}
-        <div class="movie-card" onclick="location.href='/movie/{{ movie.id }}'">
-            <!-- <img src="https://placehold.co/100x150?text={{ movie.title }}" alt="{{ movie.title }}"> -->
-            <img src="{{ movie.imageUrl }}" alt="{{ movie.title }}">
-            <p>{{ movie.title }}</p>
+    <div class="content">
+        <div class="slideshow">
+            {% for movie in slides %}
+            <div class="slide " style="background-image: url('{{ movie.imageUrl }}');">
+                <div class="details">
+                    <span class="title">{{ movie.title }}</span>
+
+                    <div class="extra">
+                        <span class="rating">{{ movie.rating }}</span>
+                        <span class="sep"> | </span>
+                        <span class="certificate">U/A 16+</span>
+                        <span class="sep"> | </span>
+                        <span class="type">{{"Movie" if 0==movie.type else "Series"}}</span>
+                        <span class="sep"> | </span>
+                        <span class="genre">{{ movie.genre }}</span>
+                    </div>
+
+                    <button class="watch">Watch Now</button>
+                </div>
+            </div>
+            {% endfor %}
+
         </div>
-        {% endfor %}
+        <div class="space-for-slideshow"></div>
+
+        <div class="movies">
+            {% for section, movies in sections.items() %}
+            <div class="category">
+                <h2>{{ section }}</h2>
+                <div class="movie-container">
+                    {% for movie in movies %}
+                    <div class="movie-card" onclick="location.href='/movie/{{ movie.id }}'">
+                        <img src="{{ movie.imageUrl }}" alt="{{ movie.title }}">
+                        <p>{{ movie.title }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
     </div>
-    {% endfor %}
+
+
+
+    <script>
+        window.addEventListener("scroll", function () {
+            let slideshow = document.querySelector(".slideshow");
+            let content = document.querySelector(".content");
+
+            if ((window.scrollY / window.outerHeight) > 0) {
+                slideshow.style.zIndex = "-1";
+
+                document.querySelector("header").style.background = "rgba(0, 0, 0, 0.40)"
+                document.querySelector("header").style.backdropFilter = "blur(10px)"
+
+            } else {
+
+                slideshow.style.zIndex = "1";
+
+                document.querySelector("header").style.background = ""
+                document.querySelector("header").style.backdropFilter = ""
+
+            }
+
+            // (window.scrollY/ window.outerHeight)*200
+
+            // slideshow.style
+            slideshow.style.filter = `blur(${(window.scrollY / window.outerHeight) * 30}px)`
+            slideshow.style.opacity = 1 / (window.scrollY / window.outerHeight) * 0.5
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let slides = document.querySelectorAll(".slide");
+            let currentSlide = 0;
+            slides[currentSlide].classList.add("active");
+            let slideInterval = setInterval(nextSlide, 10000);
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove("active");
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add("active");
+            }
+
+            function prevSlide() {
+                slides[currentSlide].classList.remove("active");
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                slides[currentSlide].classList.add("active");
+            }
+
+            document.querySelector(".next").addEventListener("click", () => {
+                clearInterval(slideInterval);
+                nextSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            document.querySelector(".prev").addEventListener("click", () => {
+                clearInterval(slideInterval);
+                prevSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+
+    </script>
+
+
+
+    <footer>
+        <div class="copyright">testng-2025</div>
+    </footer>
+
+
 </body>
 
 </html>

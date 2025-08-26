@@ -19,19 +19,19 @@ def weighted_distance(movie1, movie2, maxtrix=[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]):
     movie1 = movie1.flatten()  # Ensure it's 1D
     movie2 = movie2.flatten()  # Ensure it's 1D
 
-    voteCount = euclidean([movie1[0]], [movie2[0]]) * 3.0 * maxtrix[0]
-    country = euclidean([movie1[1]], [movie2[1]]) * 2.5 * maxtrix[1]
-    language = euclidean([movie1[2]], [movie2[2]]) * 4.0 * maxtrix[2]
+    voteCount = euclidean([movie1[0]], [movie2[0]]) * 2.0 * maxtrix[0]
+    country = euclidean([movie1[1]], [movie2[1]]) * 1.5 * maxtrix[1]
+    language = euclidean([movie1[2]], [movie2[2]]) * 5.0 * maxtrix[2]
 
-    kw = euclidean(movie1[3:6], movie2[3:6]) * 3.5 * maxtrix[3]
-    cast = euclidean(movie1[6:8], movie2[6:8]) * 3.0 * maxtrix[4]
-    crew = euclidean(movie1[8:10], movie2[8:10]) * 2.0 * maxtrix[5]
+    kw = euclidean(movie1[3:6], movie2[3:6]) * 2.5 * maxtrix[3]
+    cast = euclidean(movie1[6:8], movie2[6:8]) * 5.0 * maxtrix[4]
+    crew = euclidean(movie1[8:10], movie2[8:10]) * 8.0 * maxtrix[5]
 
-    rating = euclidean([movie1[10]], [movie2[10]]) * 5.0 * maxtrix[6]
-    year = euclidean([movie1[11]], [movie2[11]]) * 4.5 * maxtrix[7]
+    rating = euclidean([movie1[10]], [movie2[10]]) * 3.0 * maxtrix[6]
+    year = euclidean([movie1[11]], [movie2[11]]) * 1.5 * maxtrix[7]
     mtype = hamming([movie1[12]], [movie2[12]]) * 1.5 * maxtrix[8]
 
-    genres = hamming(movie1[13:], movie2[13:]) * 6.0 * maxtrix[9]
+    genres = hamming(movie1[13:], movie2[13:]) * 10.0 * maxtrix[9]
 
     return float(
         voteCount
@@ -114,11 +114,35 @@ def index():
         .sample(10)
         .to_dict(orient="records"),
     }
+    for gen in df.columns[14:]:
+        if np.random.randint(0, 5) == 0:
+            sections[gen] = (
+                details_df[df[gen] == 1]
+                .sort_values("rating", ascending=False)
+                .sample(10)
+                .to_dict(orient="records")
+            )
+
+        # print(sections[gen])
     for key, val in sections.items():
         for movie in val:
+
             movie["imageUrl"] = movie["imageUrl"].replace("_V1_", "_V0_UY248_")
 
-    return render_template("index.html", sections=sections)
+    slides = (
+        details_df.sort_values("year", ascending=False)
+        .head(500)
+        .sort_values("voteCount", ascending=False)
+        .sort_values("rating", ascending=False)
+        .sample(10)
+        .to_dict(orient="records")
+    )
+    # for slide in slides:
+    #     mf = df.loc['']
+    #     slide["genre"] = [df["id"] == slide['id']]
+    # print(slides)
+
+    return render_template("index.html", sections=sections, slides=slides)
 
 
 @app.route("/movie/<imdb_id>")

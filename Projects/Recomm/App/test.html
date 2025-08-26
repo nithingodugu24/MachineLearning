@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Slideshow</title>
+    <style>
+        /* Import Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #141414;
+            color: #fff;
+        }
+
+        /* Netflix Glass Navbar */
+        header {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        nav ul .active {
+            border-bottom: 2px solid red;
+        }
+
+        /* Slideshow */
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* Slide Content */
+        .details {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            max-width: 500px;
+        }
+
+        .details h2 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .details p {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+        .watch {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            background: red;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .watch:hover {
+            background: #b71c1c;
+        }
+
+        /* Slideshow Navigation */
+        .slideshow-nav {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .slideshow-nav button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 24px;
+            transition: 0.3s;
+        }
+
+        .slideshow-nav button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="logo">ButtFlix</h1>
+        <nav>
+            <ul>
+                <li class="active">Home</li>
+                <li>Movies</li>
+                <li>TV Shows</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="slideshow">
+        <div class="slide active"
+            style="background-image: url('https://image.tmdb.org/t/p/original/8ugz49PEyKg3JKYJqqLv77cKJup.jpg');">
+            <div class="details">
+                <h2>Stranger Things</h2>
+                <p>A thrilling series set in the 80s with supernatural elements.</p>
+                <button class="watch">Watch Now</button>
+            </div>
+        </div>
+
+        <div class="slide"
+            style="background-image: url('https://image.tmdb.org/t/p/original/qAZ0pzat24kLdO3o8ejmbLxyOac.jpg');">
+            <div class="details">
+                <h2>Extraction</h2>
+                <p>A mercenary embarks on a deadly mission to rescue a kidnapped boy.</p>
+                <button class="watch">Watch Now</button>
+            </div>
+        </div>
+
+        <div class="slide"
+            style="background-image: url('https://image.tmdb.org/t/p/original/rTh4K5uw9HypmpGslcKd4QfHl93.jpg');">
+            <div class="details">
+                <h2>Interstellar</h2>
+                <p>A space epic exploring time, gravity, and survival beyond Earth.</p>
+                <button class="watch">Watch Now</button>
+            </div>
+        </div>
+
+        <div class="slideshow-nav">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let slides = document.querySelectorAll(".slide");
+            let currentSlide = 0;
+            let slideInterval = setInterval(nextSlide, 5000); // Auto-slide every 5s
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove("active");
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add("active");
+            }
+
+            function prevSlide() {
+                slides[currentSlide].classList.remove("active");
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                slides[currentSlide].classList.add("active");
+            }
+
+            document.querySelector(".next").addEventListener("click", () => {
+                clearInterval(slideInterval);
+                nextSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            document.querySelector(".prev").addEventListener("click", () => {
+                clearInterval(slideInterval);
+                prevSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

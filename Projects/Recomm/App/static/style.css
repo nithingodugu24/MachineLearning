@@ -13,7 +13,13 @@ header {
     text-align: center;
     font-weight: bold;
     display: flex;
-    margin-left: 5vw;
+    padding-left: 5vw;
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    transition: all ease-in-out 0.2s;
 }
 
 
@@ -58,33 +64,49 @@ header .items .active::after {
     border-radius: 5px;
 }
 
-.slideshow {
-    height: 60vh;
+.space-for-slideshow {
+    margin-top: 60vh;
 }
 
-.slideshow #slide1 {
-    background-image: url('https://occ-0-4857-2164.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABer7SeWc6FvkBqWtk61GwL7rshAEVCOARQZVTEJGnLXykYBlO4nbbr6gs7M650BjULuaN6hucXKr5xY2iqPAajrxXd70HawdJeuD.jpg?r=608');
+.slideshow {
+    height: 60vh;
+    width: 100%;
+    z-index: -1;
+    position: fixed;
+    top: 1px;
+}
+
+
+
+.slideshow .slide {
     background-repeat: no-repeat;
     background-size: cover;
     height: inherit;
     width: 100%;
-    position: relative;
+    position: absolute;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-.slideshow #slide1::after {
+
+
+.slide.active {
+    opacity: 1;
+}
+
+.slideshow .slide::after {
     background: linear-gradient(61deg, black, transparent);
     content: '';
     height: 100%;
     position: absolute;
     width: 100%;
     opacity: 0.7;
-    border-radius: 20px;
 }
 
 .slide {
     display: flex;
     align-items: center;
-    border-radius: 20px;
 }
 
 .slide .details {
@@ -102,17 +124,41 @@ header .items .active::after {
     font-size: 15px;
 }
 
+.slide .details .watch {
+    padding: 10px 30px;
+    margin: 20px 5px;
+    background-color: #d72024;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+}
+
+.slide .details .watch:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transform: scale(0.99);
+}
+
+
+
 h2 {
     margin-left: 20px;
 }
 
+
+
 .movie-container {
     overflow-x: auto;
     padding: 10px;
-    align-items: center;
     display: flex;
     gap: 1rem;
     justify-content: center;
+    text-align: center;
 }
 
 .movie-card {
@@ -125,6 +171,9 @@ h2 {
 .movie-card img {
     width: 100%;
     border-radius: 5px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .movie-card:hover {
@@ -160,4 +209,14 @@ h2 {
 
 .recommendation-card:hover {
     transform: scale(1.1);
+}
+
+
+footer {
+    color: #bdbdbd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: linear-gradient(180deg, #141414, #302323);
 }
